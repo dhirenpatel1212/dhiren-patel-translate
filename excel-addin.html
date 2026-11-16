@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Excel Add-in - Dhiren Translate</title>
+
+    <meta
+        name="description"
+        content="Dhiren Translate Excel Add-in with translation, Indian number-to-words, text formatting and custom Excel functions."
+    >
+
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+
+
+<body>
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a href="/" class="brand">
+
+            <span class="brand-icon">文</span>
+
+            <span>Dhiren Translate</span>
+
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a href="/" class="nav-link">
+                Translate
+            </a>
+
+            <a href="/api-docs" class="nav-link">
+                API Docs
+            </a>
+
+            <a
+                href="/excel-addin"
+                class="nav-link active"
+                aria-current="page"
+            >
+                Excel Add-in
+            </a>
+
+        </nav>
+
+
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileNav"
+        >
+            ☰
+        </button>
+
+    </div>
+
+
+    <div
+        class="mobile-nav"
+        id="mobileNav"
+    >
+
+        <a href="/">Translate</a>
+
+        <a href="/api-docs">API Docs</a>
+
+        <a href="/excel-addin">Excel Add-in</a>
+
+    </div>
+
+</header>
+
+
+<main class="docs-page">
+
+    <!-- HERO -->
+
+    <section class="docs-header">
+
+        <div class="hero-badge">
+            <span></span>
+            Microsoft Excel
+        </div>
+
+        <h1>
+            Powerful Excel tools in one Add-in
+        </h1>
+
+        <p>
+            Dhiren Translate Excel Add-in adds translation,
+            Indian number-to-words, text formatting and
+            custom Excel functions directly to Microsoft Excel.
+        </p>
+
+        <p>
+            <a
+                href="/downloads/DhirenTranslate.xlam"
+                class="download-button"
+                download
+            >
+                ↓ Download Excel Add-in
+            </a>
+        </p>
+
+        <p class="small-text">
+            Macro-enabled Excel Add-in (.xlam)
+        </p>
+
+    </section>
+
+
+    <!-- WHAT IS IT -->
+
+    <section class="docs-card">
+
+        <h2>What is the Excel Add-in?</h2>
+
+        <p>
+            Dhiren Translate is a Microsoft Excel
+            macro-enabled add-in that provides useful
+            custom functions and tools for everyday
+            Excel work.
+        </p>
+
+        <p>
+            It combines text formatting utilities,
+            Indian number-to-words conversion,
+            translation and custom SUMIF functions
+            into one Excel solution.
+        </p>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="docs-card">
+
+        <h2>Features</h2>
+
+        <ul>
+
+            <li>
+                <strong>Number to Indian Words</strong>
+                – Convert numbers into Indian Rupees and
+                Paise using the <code>n2t()</code> function.
+            </li>
+
+            <li>
+                <strong>Indian Numbering System</strong>
+                – Supports Thousand, Lakh and Crore.
+            </li>
+
+            <li>
+                <strong>Rupees and Paise</strong>
+                – Converts decimal values into Paise.
+            </li>
+
+            <li>
+                <strong>Excel Translation</strong>
+                – Translate text directly from Excel using
+                the Dhiren Translate API.
+            </li>
+
+            <li>
+                <strong>Uppercase</strong>
+                – Convert selected cells to UPPERCASE.
+            </li>
+
+            <li>
+                <strong>Lowercase</strong>
+                – Convert selected cells to lowercase.
+            </li>
+
+            <li>
+                <strong>Proper Case</strong>
+                – Convert selected text into Proper Case.
+            </li>
+
+            <li>
+                <strong>Trim Spaces</strong>
+                – Remove unnecessary spaces from selected cells.
+            </li>
+
+            <li>
+                <strong>Add Space</strong>
+                – Automatically add spaces between
+                letters and numbers where required.
+            </li>
+
+            <li>
+                <strong>SUMIFD</strong>
+                – SUMIF-style calculation with support
+                for merged cells.
+            </li>
+
+            <li>
+                <strong>SUMIFSD</strong>
+                – SUMIFS-style calculation with support
+                for merged-cell criteria.
+            </li>
+
+            <li>
+                <strong>Help</strong>
+                – Open the built-in Dhiren Translate
+                Excel help window.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- NUMBER TO WORDS -->
+
+    <section class="docs-card">
+
+        <h2>Number to Indian Rupees Words</h2>
+
+        <p>
+            The <code>n2t()</code> function converts a numeric
+            value into words using the Indian numbering system.
+        </p>
+
+        <div class="code-block">
+
+<pre>=n2t(1234567.89)</pre>
+
+        </div>
+
+        <p>
+            Example result:
+        </p>
+
+        <div class="example-result">
+            Twelve Lakh Thirty Four Thousand Five Hundred
+            Sixty Seven Rupees and Eighty Nine Paise
+        </div>
+
+        <p>
+            The function supports:
+        </p>
+
+        <ul>
+
+            <li>Thousand</li>
+            <li>Lakh</li>
+            <li>Crore</li>
+            <li>Rupees</li>
+            <li>Paise</li>
+
+        </ul>
+
+        <p>
+            Values above
+            <strong>999,999,999.99</strong>
+            are reported as
+            <strong>Number is too Large</strong>.
+        </p>
+
+    </section>
+
+
+    <!-- TRANSLATION -->
+
+    <section class="docs-card">
+
+        <h2>Translate Excel Cells</h2>
+
+        <p>
+            The custom <code>Translate()</code> function
+            connects Excel directly to the Dhiren Translate
+            API.
+        </p>
+
+        <div class="code-block">
+
+<pre>=Translate(A1,"en","hi")</pre>
+
+        </div>
+
+        <p>
+            The function accepts:
+        </p>
+
+        <table class="info-table">
+
+            <thead>
+
+                <tr>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>strInput</td>
+                    <td>Text to translate</td>
+                    <td>A1</td>
+                </tr>
+
+                <tr>
+                    <td>strFromSourceLanguage</td>
+                    <td>Source language code</td>
+                    <td>en</td>
+                </tr>
+
+                <tr>
+                    <td>strToTargetLanguage</td>
+                    <td>Target language code</td>
+                    <td>hi</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        <p>
+            Example:
+        </p>
+
+        <div class="code-block">
+
+<pre>=Translate("Hello World","en","hi")</pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- TEXT TOOLS -->
+
+    <section class="docs-card">
+
+        <h2>Text Formatting Tools</h2>
+
+        <p>
+            The Add-in includes several VBA tools for quickly
+            cleaning and formatting selected Excel cells.
+        </p>
+
+        <table class="info-table">
+
+            <thead>
+
+                <tr>
+                    <th>Tool</th>
+                    <th>Function</th>
+                    <th>Shortcut</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>UpperCase</td>
+                    <td>Converts selected cells to UPPERCASE</td>
+                    <td>Ctrl + Shift + U</td>
+                </tr>
+
+                <tr>
+                    <td>LowerCase</td>
+                    <td>Converts selected cells to lowercase</td>
+                    <td>Ctrl + Shift + L</td>
+                </tr>
+
+                <tr>
+                    <td>ProperCase</td>
+                    <td>Converts selected cells to Proper Case</td>
+                    <td>Ctrl + Shift + P</td>
+                </tr>
+
+                <tr>
+                    <td>TrimString</td>
+                    <td>Removes unnecessary spaces</td>
+                    <td>Ctrl + Shift + T</td>
+                </tr>
+
+                <tr>
+                    <td>AddSpace</td>
+                    <td>Adds spaces between letters and numbers</td>
+                    <td>Ctrl + Shift + S</td>
+                </tr>
+
+                <tr>
+                    <td>Help</td>
+                    <td>Opens the Add-in help window</td>
+                    <td>Ctrl + Shift + H</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- CUSTOM FUNCTIONS -->
+
+    <section class="docs-card">
+
+        <h2>Custom Excel Functions</h2>
+
+        <p>
+            The Add-in also provides custom worksheet functions
+            designed to work with merged cells.
+        </p>
+
+        <h3>SUMIFD</h3>
+
+        <p>
+            Performs a SUMIF-style calculation while using
+            the first value of a merged cell area as the
+            criteria value.
+        </p>
+
+        <div class="code-block">
+
+<pre>=SUMIFD(A2:A20,"Sales",C2:C20)</pre>
+
+        </div>
+
+
+        <h3>SUMIFSD</h3>
+
+        <p>
+            Performs a SUMIFS-style calculation with support
+            for one or two criteria ranges and merged cells.
+        </p>
+
+        <div class="code-block">
+
+<pre>=SUMIFSD(C2:C20,A2:A20,"Sales",B2:B20,"January")</pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXAMPLE -->
+
+    <section class="docs-card">
+
+        <h2>Example</h2>
+
+        <table class="info-table">
+
+            <thead>
+
+                <tr>
+                    <th>Excel Formula</th>
+                    <th>Purpose</th>
+                    <th>Example Result</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td><code>=n2t(12500)</code></td>
+                    <td>Number to Indian Rupees</td>
+                    <td>Twelve Thousand Five Hundred Rupees</td>
+                </tr>
+
+                <tr>
+                    <td><code>=n2t(12500.50)</code></td>
+                    <td>Rupees and Paise</td>
+                    <td>... Rupees and Fifty Paise</td>
+                </tr>
+
+                <tr>
+                    <td><code>=Translate(A1,"en","hi")</code></td>
+                    <td>English to Hindi</td>
+                    <td>नमस्ते दुनिया</td>
+                </tr>
+
+                <tr>
+                    <td><code>=SUMIFD(...)</code></td>
+                    <td>SUMIF with merged cells</td>
+                    <td>Calculated total</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- API -->
+
+    <section class="docs-card">
+
+        <h2>Translation API</h2>
+
+        <p>
+            The <code>Translate()</code> Excel function uses
+            the same Dhiren Translate API as the website.
+        </p>
+
+        <div class="code-block">
+
+<pre>GET https://dhiren-patel-translate.vercel.app/api/?sl=en&amp;tl=hi&amp;q=Hello%20world</pre>
+
+        </div>
+
+        <p>
+            This allows the Excel Add-in to use the existing
+            translation backend without requiring a separate
+            translation service.
+        </p>
+
+    </section>
+
+
+    <!-- INSTALLATION -->
+
+    <section class="docs-card">
+
+        <h2>Installation</h2>
+
+        <p>
+            Download the Excel Add-in file first:
+        </p>
+
+        <p>
+            <a
+                href="/downloads/DhirenTranslate.xlam"
+                class="download-button"
+                download
+            >
+                ↓ Download DhirenTranslate.xlam
+            </a>
+        </p>
+
+        <ol class="step-list">
+
+            <li>
+                Download
+                <strong>DhirenTranslate.xlam</strong>.
+            </li>
+
+            <li>
+                Open Microsoft Excel.
+            </li>
+
+            <li>
+                Go to
+                <strong>File → Options → Add-ins</strong>.
+            </li>
+
+            <li>
+                At the bottom of the Add-ins window,
+                find <strong>Manage</strong>.
+            </li>
+
+            <li>
+                Select
+                <strong>Excel Add-ins</strong>
+                and click
+                <strong>Go</strong>.
+            </li>
+
+            <li>
+                Click
+                <strong>Browse</strong>
+                or use the available option to select
+                the downloaded
+                <strong>DhirenTranslate.xlam</strong>
+                file.
+            </li>
+
+            <li>
+                Select the file and click
+                <strong>OK</strong>
+                or
+                <strong>Add</strong>.
+            </li>
+
+            <li>
+                If Excel displays a security warning,
+                enable macros/content only if you trust
+                the downloaded file.
+            </li>
+
+            <li>
+                The Dhiren Translate tools and functions
+                are now available in Excel.
+            </li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- HOW TO USE -->
+
+    <section class="docs-card">
+
+        <h2>Quick Start</h2>
+
+        <ol class="step-list">
+
+            <li>
+                Download and install the
+                <strong>DhirenTranslate.xlam</strong>
+                Add-in.
+            </li>
+
+            <li>
+                Open or create an Excel workbook.
+            </li>
+
+            <li>
+                Use <code>=n2t(number)</code> to convert
+                numbers into Indian Rupees words.
+            </li>
+
+            <li>
+                Use
+                <code>=Translate(text,"en","hi")</code>
+                to translate text.
+            </li>
+
+            <li>
+                Select cells and use the text-formatting
+                tools such as UpperCase, LowerCase,
+                ProperCase, TrimString and AddSpace.
+            </li>
+
+            <li>
+                Use <code>SUMIFD</code> and
+                <code>SUMIFSD</code> when working with
+                merged-cell data.
+            </li>
+
+            <li>
+                Use the Help option whenever you need
+                assistance with the Add-in.
+            </li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- REQUIREMENTS -->
+
+    <section class="docs-card">
+
+        <h2>Requirements</h2>
+
+        <ul>
+
+            <li>
+                Microsoft Excel with VBA/macro support.
+            </li>
+
+            <li>
+                Macros must be enabled for the Add-in.
+            </li>
+
+            <li>
+                Internet connection is required for the
+                <code>Translate()</code> function.
+            </li>
+
+            <li>
+                The translation function requires access
+                to the Dhiren Translate API.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- HELP -->
+
+    <section class="docs-card">
+
+        <h2>Need help?</h2>
+
+        <p>
+            Use the built-in Excel Help option or check the
+            <a href="/api-docs">
+                Dhiren Translate API documentation
+            </a>
+            for information about the translation service.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div>
+            © <span id="year"></span> Dhiren Translate
+        </div>
+
+        <div class="footer-links">
+
+            <a href="/">
+                Translate
+            </a>
+
+            <a href="/api-docs">
+                API Docs
+            </a>
+
+            <a href="/excel-addin">
+                Excel Add-in
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+const button =
+    document.getElementById("mobileMenuButton");
+
+const nav =
+    document.getElementById("mobileNav");
+
+
+button.addEventListener(
+    "click",
+    function () {
+
+        const isOpen =
+            nav.classList.toggle("open");
+
+        button.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>
